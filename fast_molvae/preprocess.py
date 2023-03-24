@@ -16,7 +16,7 @@ from rdkit import RDLogger
 from rdkit.rdBase import DisableLog
 
 for level in RDLogger._levels:
-    DisableLog(level))       
+    DisableLog(level)      
 def tensorize(smiles, assm=True):
     mol_tree = MolTree(smiles)
     mol_tree.recover()
