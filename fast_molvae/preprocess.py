@@ -6,6 +6,7 @@ from multiprocessing import Pool
 import numpy as np
 import os
 from tqdm import tqdm
+import rdkit
 
 import math, random, sys
 from optparse import OptionParser
