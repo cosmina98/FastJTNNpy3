@@ -10,10 +10,10 @@ from tqdm import tqdm
 import math, random, sys
 from optparse import OptionParser
 import pickle
-
+from rdkit import RDLogger
 from fast_jtnn import *
 import rdkit
-
+RDLogger.DisableLog('rdApp.info')       
 def tensorize(smiles, assm=True):
     mol_tree = MolTree(smiles)
     mol_tree.recover()
