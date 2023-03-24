@@ -6,14 +6,18 @@ from multiprocessing import Pool
 import numpy as np
 import os
 from tqdm import tqdm
+import rdkit
 
 import math, random, sys
 from optparse import OptionParser
 import pickle
-
+from rdkit import RDLogger
 from fast_jtnn import *
-import rdkit
+from rdkit import RDLogger
+from rdkit.rdBase import DisableLog
 
+for level in RDLogger._levels:
+    DisableLog(level)      
 def tensorize(smiles, assm=True):
     mol_tree = MolTree(smiles)
     mol_tree.recover()
