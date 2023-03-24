@@ -12,8 +12,11 @@ from optparse import OptionParser
 import pickle
 from rdkit import RDLogger
 from fast_jtnn import *
-import rdkit
-RDLogger.DisableLog('rdApp.info')       
+from rdkit import RDLogger
+from rdkit.rdBase import DisableLog
+
+for level in RDLogger._levels:
+    DisableLog(level))       
 def tensorize(smiles, assm=True):
     mol_tree = MolTree(smiles)
     mol_tree.recover()
